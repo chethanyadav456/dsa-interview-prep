@@ -6,10 +6,10 @@ Practice platform: [learn.chethan.xyz](https://learn.chethan.xyz)
 
 ## Layout
 
-- `java/` — Java course tracker, one folder per module with a lesson checklist
-- `dsa/<topic>/` — one solution file per problem, named `NNN-problem-name.<ext>`
-- `interview-notes/` — behavioral stories, system design notes, company interview experiences
-- `templates/` — problem write-up template
+- `java/` - Java course tracker, one folder per module with a lesson checklist
+- `dsa/<topic>/` - one solution file per problem, named `NNN-problem-name.<ext>`
+- `interview-notes/` - behavioral stories, system design notes, company interview experiences
+- `templates/` - problem write-up template
 
 ## Progress
 
