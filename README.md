@@ -19,6 +19,7 @@ Practice platform: [learn.chethan.xyz](https://learn.chethan.xyz)
 │   ├── 02-variables-data-types/
 │   ├── ...
 │   └── 09-arrays/
+├── extension/            Chrome extension that auto-commits accepted LeetCode solutions
 ├── dsa/                  DSA solutions grouped by topic
 │   ├── arrays-hashing/
 │   ├── two-pointers/
