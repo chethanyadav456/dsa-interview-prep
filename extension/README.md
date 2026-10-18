@@ -18,7 +18,7 @@ The token lives in `chrome.storage.local` on your machine only. Never commit it.
 
 ## Limits
 
-- Only hooks `fetch` on leetcode.com. If LeetCode changes how it submits, `inject.js` needs updating.
+- Hooks `fetch` and XHR on leetcode.com. If LeetCode changes how it submits, `inject.js` needs updating.
 - Topic folder comes from LeetCode tags (first match in `lib.js` `TOPICS`), anything else goes to `dsa/misc/`.
 - Needs Chrome 111+ (content script `world: "MAIN"`).
 

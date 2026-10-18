@@ -65,7 +65,11 @@ function badge(text, color, title) {
 }
 
 chrome.runtime.onMessage.addListener((msg) => {
+  console.log('[lc-sync] received', msg.slug, msg.lang);
   sync(msg)
     .then((r) => badge('OK', '#2da44e', `${msg.slug}: ${r}`))
-    .catch((e) => badge('ERR', '#cf222e', e.message));
+    .catch((e) => {
+      console.error('[lc-sync]', e);
+      badge('ERR', '#cf222e', e.message);
+    });
 });
