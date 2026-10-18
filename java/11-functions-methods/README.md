@@ -1,0 +1,24 @@
+# Functions & Methods
+
+- [ ] 1. Introduction To Function
+- [ ] 2. Syntax - Function Code Demo
+- [ ] 3. Syntax With Parameters
+- [ ] 4. Parameters vs Arguments
+- [ ] 5. What Happens In Memory
+- [ ] 6. Call By Value
+- [ ] 7. Product Of a & b
+- [ ] 8. Find Factorial
+- [ ] 9. Find Binomial Coefficient
+- [ ] 10. Inbuilt vs User Defined Methods
+- [ ] 11. Function Overloading
+- [ ] 12. Overloading Using Parameters
+- [ ] 13. Overloading Using Data Types
+- [ ] 14. Check If Number Is Prime Or Not
+- [ ] 15. Check Prime (Optimised)
+- [ ] 16. Prime In Range
+- [ ] 17. Binary To Decimal
+- [ ] 18. Code - Binary To Decimal
+- [ ] 19. Decimal To Binary
+- [ ] 20. Code - Decimal To Binary
+- [ ] 21. Block Scope
+- [ ] 22. Method Scope
