@@ -10,8 +10,7 @@ class Solution {
             reversed = reversed * 10 + digit;
             x /= 10;
         }
-        // this lol is a ext test
-
+        
         return original == reversed;
     }
 }
