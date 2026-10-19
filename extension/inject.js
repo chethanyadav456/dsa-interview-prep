@@ -1,8 +1,16 @@
 // Runs in the page context so it can see LeetCode's own network calls.
-// Hooks both fetch and XHR because LeetCode has used each over time.
+// Hooks fetch and XHR, and understands both the REST result poll and the GraphQL one.
 (() => {
   const log = (...a) => console.log('[lc-sync]', ...a);
   const pending = new Map(); // submission_id -> { slug, lang, code }
+  const done = new Set();
+
+  function accept(id, sub) {
+    if (done.has(id) || !sub || !sub.code || !sub.slug) return;
+    done.add(id);
+    log('accepted, sending to background', id, sub.slug);
+    window.postMessage({ source: 'lc-sync', payload: sub }, '*');
+  }
 
   function handle(url, body, data) {
     const submit = url.match(/\/problems\/([^/]+)\/submit\/?/);
@@ -12,23 +20,42 @@
       log('submission started', data.submission_id, submit[1]);
       return;
     }
+
     const check = url.match(/\/submissions\/detail\/(\d+)\/check\/?/);
-    if (!check || data.state !== 'SUCCESS') return;
-    log('result', check[1], data.status_msg);
-    const sub = pending.get(check[1]);
-    if (data.status_msg === 'Accepted' && sub) {
-      pending.delete(check[1]);
-      window.postMessage({ source: 'lc-sync', payload: sub }, '*');
+    if (check && data.state === 'SUCCESS') {
+      log('result (rest)', check[1], data.status_msg);
+      if (data.status_msg === 'Accepted') accept(check[1], pending.get(check[1]));
+      return;
+    }
+
+    const d = data && data.data && data.data.submissionDetails;
+    if (d) {
+      const id = String(JSON.parse(body).variables.submissionId);
+      log('result (graphql)', id, d.statusDisplay);
+      if (d.statusDisplay === 'Accepted') {
+        const known = pending.get(id) || {};
+        accept(id, {
+          slug: known.slug || (d.question && d.question.titleSlug),
+          lang: known.lang || (d.lang && d.lang.name),
+          code: known.code || d.code,
+        });
+      }
     }
   }
+
+  // Only parse responses that could be about a submission.
+  const relevant = (url, body) =>
+    /\/(submit|check)\/?(\?|$)/.test(url) || (/graphql/.test(url) && typeof body === 'string' && body.includes('submissionDetails'));
 
   const origFetch = window.fetch;
   window.fetch = async function (input, init) {
     const res = await origFetch.apply(this, arguments);
     const url = typeof input === 'string' ? input : input.url;
-    const body = init && init.body !== undefined ? init.body : undefined;
-    if (/\/(submit|check)\/?(\?|$)/.test(url)) {
+    const body = init && init.body;
+    if (relevant(url, body)) {
       res.clone().json().then((d) => handle(url, body, d)).catch((e) => log('fetch parse error', e.message));
+    } else if (/submi|check/.test(url)) {
+      log('unhandled request', url);
     }
     return res;
   };
@@ -40,10 +67,12 @@
     return open.apply(this, arguments);
   };
   XMLHttpRequest.prototype.send = function (body) {
-    if (/\/(submit|check)\/?(\?|$)/.test(this._lcUrl || '')) {
+    if (relevant(this._lcUrl || '', body)) {
       this.addEventListener('load', () => {
         try { handle(this._lcUrl, body, JSON.parse(this.responseText)); } catch (e) { log('xhr parse error', e.message); }
       });
+    } else if (/submi|check/.test(this._lcUrl || '')) {
+      log('unhandled request', this._lcUrl);
     }
     return send.apply(this, arguments);
   };
