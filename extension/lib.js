@@ -15,7 +15,7 @@ export const TOPICS = [
   { folder: 'graphs', label: 'Graphs', tags: ['graph', 'union-find', 'topological-sort', 'breadth-first-search', 'depth-first-search'] },
   { folder: 'greedy', label: 'Greedy', tags: ['greedy'] },
   { folder: 'intervals', label: 'Intervals', tags: ['line-sweep'] },
-  { folder: 'arrays-hashing', label: 'Arrays & Hashing', tags: ['array', 'hash-table', 'string', 'matrix', 'sorting', 'prefix-sum'] },
+  { folder: 'arrays-hashing', label: 'Arrays & Hashing', tags: ['array', 'hash-table', 'string', 'matrix', 'sorting', 'prefix-sum', 'math'] },
 ];
 const MISC = { folder: 'misc', label: null };
 
