@@ -24,6 +24,7 @@ Practice platform: [learn.chethan.xyz](https://learn.chethan.xyz)
 │   ├── arrays-hashing/
 │   ├── two-pointers/
 │   └── ...
+├── roadmap/              pattern-based, company-wise DSA roadmap and 60-day plan
 ├── interview-notes/
 │   ├── behavioral/       STAR stories
 │   ├── system-design/    design notes
@@ -48,9 +49,13 @@ Modules follow the course order on the learn platform. Each module folder has it
 | 08 | Patterns (Part II) - Advanced |
 | 09 | Arrays |
 
+## DSA roadmap
+
+Pattern-based and company-wise, with a 60-day plan: see [roadmap/README.md](roadmap/README.md). Covers 22 patterns, 8 companies, 182 problems.
+
 ## DSA topics
 
-Arrays & Hashing, Two Pointers, Sliding Window, Stack, Binary Search, Linked List, Trees, Heap, Backtracking, Graphs, DP, Greedy, Intervals, Bit Manipulation.
+Arrays & Hashing, Two Pointers, Sliding Window, Stack, Binary Search, Linked List, Trees, Heap, Backtracking, Graphs, DP, Greedy, Intervals, Bit Manipulation, Design.
 
 Solution files are named `NNN-problem-name.<ext>`, where `NNN` is the problem number on the platform it came from.
 
@@ -79,6 +84,7 @@ Solution files are named `NNN-problem-name.<ext>`, where `NNN` is the problem nu
 | Greedy | 0 |
 | Intervals | 0 |
 | Bit Manipulation | 0 |
+| Design | 0 |
 
 ## Log
 
