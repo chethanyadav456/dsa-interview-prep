@@ -51,11 +51,11 @@ Modules follow the course order on the learn platform. Each module folder has it
 
 ## DSA roadmap
 
-Pattern-based and company-wise, with a 60-day plan: see [roadmap/README.md](roadmap/README.md). Covers 22 patterns, 8 companies, 182 problems.
+Pattern-based and company-wise, with a 60-day plan: see [roadmap/README.md](roadmap/README.md). Two tracks: a 60-day plan (22 patterns, 8 companies) and a 10-week plan (14 patterns). 222 unique problems in total.
 
 ## DSA topics
 
-Arrays & Hashing, Two Pointers, Sliding Window, Stack, Binary Search, Linked List, Trees, Heap, Backtracking, Graphs, DP, Greedy, Intervals, Bit Manipulation, Design.
+Arrays & Hashing, Two Pointers, Sliding Window, Stack, Binary Search, Linked List, Trees, Heap, Backtracking, Graphs, DP, Greedy, Intervals, Bit Manipulation, Design, Trie.
 
 Solution files are named `NNN-problem-name.<ext>`, where `NNN` is the problem number on the platform it came from.
 
@@ -85,6 +85,7 @@ Solution files are named `NNN-problem-name.<ext>`, where `NNN` is the problem nu
 | Intervals | 0 |
 | Bit Manipulation | 0 |
 | Design | 0 |
+| Trie | 0 |
 
 ## Log
 

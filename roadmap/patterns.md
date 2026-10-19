@@ -371,7 +371,7 @@ Folder: `dsa/graphs/` | Core pattern for: Google, Uber
 - [ ] [#207 Course Schedule](https://leetcode.com/problems/course-schedule/) - Medium - Google
 - [ ] [#210 Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) - Medium
 - [ ] [#1591 Strange Printer II](https://leetcode.com/problems/strange-printer-ii/) - Hard
-- [ ] [#444 Sequence Reconstruction](https://leetcode.com/problems/sequence-reconstruction/) - Medium
+- [ ] [#444 Sequence Reconstruction](https://leetcode.com/problems/sequence-reconstruction/) - Medium (Premium)
 
 **Union-Find**
 
