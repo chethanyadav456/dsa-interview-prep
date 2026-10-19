@@ -31,8 +31,10 @@
     const d = data && data.data && data.data.submissionDetails;
     if (d) {
       const id = String(JSON.parse(body).variables.submissionId);
-      log('result (graphql)', id, d.statusDisplay);
-      if (d.statusDisplay === 'Accepted') {
+      log('result (graphql)', id, JSON.stringify(d).slice(0, 300));
+      // Field names vary by query, so accept any of the known signals (statusCode 10 is Accepted).
+      const accepted = d.statusCode === 10 || /"(statusDisplay|status_msg|status)":"Accepted"/.test(JSON.stringify(d));
+      if (accepted) {
         const known = pending.get(id) || {};
         accept(id, {
           slug: known.slug || (d.question && d.question.titleSlug),
