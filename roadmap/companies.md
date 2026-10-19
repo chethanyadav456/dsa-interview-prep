@@ -4,16 +4,16 @@ Curated problems per company and the core patterns each company leans on, from [
 
 ## Overview
 
-| Company | Core patterns | Problems | Behavioral prep |
-|---------|---------------|----------|-----------------|
-| [Amazon](#amazon) | Sliding Window (4), Two Pointers (5), Breadth-First Search (BFS) (9), Design Data Structure (22) | 16 | [amazon.md](../interview-notes/behavioral/amazon.md) |
-| [Google](#google) | Dynamic Programming (19), Graphs (20), Backtracking (11), Modified Binary Search (12) | 17 | [google.md](../interview-notes/behavioral/google.md) |
-| [Meta](#meta) | Sliding Window (4), Trees (18), Breadth-First Search (BFS) (9), Design Data Structure (22) | 13 | [meta.md](../interview-notes/behavioral/meta.md) |
-| [Netflix](#netflix) | Overlapping Intervals (2), Greedy (21), Top K Elements (14), Two Heaps (16) | 13 | - |
-| [Uber](#uber) | Graphs (20), Greedy (21), Two Heaps (16), Top K Elements (14) | 12 | - |
-| [Airbnb](#airbnb) | Overlapping Intervals (2), Breadth-First Search (BFS) (9), Backtracking (11), Design Data Structure (22) | 12 | - |
-| [Microsoft](#microsoft) | Trees (18), Dynamic Programming (19), Bitwise XOR (13), Modified Binary Search (12) | 11 | - |
-| [Apple](#apple) | Modified Binary Search (12), Two Pointers (5), Monotonic Stack (17), Matrix Manipulation (8) | 10 | [apple.md](../interview-notes/behavioral/apple.md) |
+| Company | Core patterns | Problems | Behavioral prep | 5-week guide |
+|---------|---------------|----------|-----------------|--------------|
+| [Amazon](#amazon) | Sliding Window (4), Two Pointers (5), Breadth-First Search (BFS) (9), Design Data Structure (22) | 16 | [amazon.md](../interview-notes/behavioral/amazon.md) | [amazon](company-guides/amazon.md) |
+| [Google](#google) | Dynamic Programming (19), Graphs (20), Backtracking (11), Modified Binary Search (12) | 17 | [google.md](../interview-notes/behavioral/google.md) | [google](company-guides/google.md) |
+| [Meta](#meta) | Sliding Window (4), Trees (18), Breadth-First Search (BFS) (9), Design Data Structure (22) | 13 | [meta.md](../interview-notes/behavioral/meta.md) | [meta](company-guides/meta.md) |
+| [Netflix](#netflix) | Overlapping Intervals (2), Greedy (21), Top K Elements (14), Two Heaps (16) | 13 | - | [netflix](company-guides/netflix.md) |
+| [Uber](#uber) | Graphs (20), Greedy (21), Two Heaps (16), Top K Elements (14) | 12 | - | - |
+| [Airbnb](#airbnb) | Overlapping Intervals (2), Breadth-First Search (BFS) (9), Backtracking (11), Design Data Structure (22) | 12 | - | - |
+| [Microsoft](#microsoft) | Trees (18), Dynamic Programming (19), Bitwise XOR (13), Modified Binary Search (12) | 11 | - | - |
+| [Apple](#apple) | Modified Binary Search (12), Two Pointers (5), Monotonic Stack (17), Matrix Manipulation (8) | 10 | [apple.md](../interview-notes/behavioral/apple.md) | [apple](company-guides/apple.md) |
 
 Numbers in brackets are the pattern numbers in [patterns.md](patterns.md).
 
@@ -54,6 +54,8 @@ Problems that appear in 3 or more company lists. Do these first.
 Core patterns: Sliding Window, Two Pointers, Breadth-First Search (BFS), Design Data Structure
 
 Behavioral round: [amazon.md](../interview-notes/behavioral/amazon.md)
+
+5-week plan and resources: [company-guides/amazon.md](company-guides/amazon.md)
 
 **Sliding Window**
 
@@ -96,6 +98,8 @@ Behavioral round: [amazon.md](../interview-notes/behavioral/amazon.md)
 Core patterns: Dynamic Programming, Graphs, Backtracking, Modified Binary Search
 
 Behavioral round: [google.md](../interview-notes/behavioral/google.md)
+
+5-week plan and resources: [company-guides/google.md](company-guides/google.md)
 
 **Dynamic Programming**
 
@@ -140,6 +144,8 @@ Core patterns: Sliding Window, Trees, Breadth-First Search (BFS), Design Data St
 
 Behavioral round: [meta.md](../interview-notes/behavioral/meta.md)
 
+5-week plan and resources: [company-guides/meta.md](company-guides/meta.md)
+
 **Sliding Window**
 
 | Problem | Difficulty | Also asked at |
@@ -176,6 +182,8 @@ Behavioral round: [meta.md](../interview-notes/behavioral/meta.md)
 ## Netflix
 
 Core patterns: Overlapping Intervals, Greedy, Top K Elements, Two Heaps
+
+5-week plan and resources: [company-guides/netflix.md](company-guides/netflix.md)
 
 **Overlapping Intervals**
 
@@ -322,6 +330,8 @@ Core patterns: Trees, Dynamic Programming, Bitwise XOR, Modified Binary Search
 Core patterns: Modified Binary Search, Two Pointers, Monotonic Stack, Matrix Manipulation
 
 Behavioral round: [apple.md](../interview-notes/behavioral/apple.md)
+
+5-week plan and resources: [company-guides/apple.md](company-guides/apple.md)
 
 **Modified Binary Search**
 

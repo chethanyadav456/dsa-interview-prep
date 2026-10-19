@@ -478,13 +478,13 @@ Goal: Implement from scratch, not just read.
 
 Goal: Pick one company and solve 4 problems from its list, mixing patterns (e.g. Amazon: Sliding Window + BFS + Design).
 
-- [ ] See companies.md
+- [ ] Pick the company from companies.md; for Meta, Amazon, Apple, Netflix or Google also use its 5-week guide in company-guides/
 
 ### Day 57: Company Simulation Day 2
 
 Goal: Pick another company and do the same, focusing on its core patterns.
 
-- [ ] See companies.md
+- [ ] Pick the company from companies.md; for Meta, Amazon, Apple, Netflix or Google also use its 5-week guide in company-guides/
 
 ### Day 58: Mistake Log Day
 
