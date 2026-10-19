@@ -23,7 +23,7 @@ function gh(cfg) {
   const url = (p) => base + p.split('/').map(encodeURIComponent).join('/');
   return {
     async get(path) {
-      const res = await fetch(`${url(path)}?ref=${encodeURIComponent(cfg.branch)}`, { headers });
+      const res = await fetch(`${url(path)}?ref=${encodeURIComponent(cfg.branch)}`, { headers, cache: 'no-store' });
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`GitHub GET ${path}: ${res.status} ${await reason(res)}`);
       const j = await res.json();
@@ -35,7 +35,7 @@ function gh(cfg) {
         headers,
         body: JSON.stringify({ message, content: toB64(text), branch: cfg.branch, sha }),
       });
-      if (!res.ok) throw new Error(`GitHub PUT ${path}: ${res.status} ${await reason(res)}`);
+      if (!res.ok) throw Object.assign(new Error(`GitHub PUT ${path}: ${res.status} ${await reason(res)}`), { status: res.status });
     },
   };
 }
@@ -67,9 +67,23 @@ function badge(text, color, title) {
   chrome.action.setTitle({ title });
 }
 
+// One sync at a time: concurrent runs read the same file sha and the second PUT gets a 409.
+let queue = Promise.resolve();
+
+// A 409 means the sha we read went stale, so re-read and try once more.
+async function syncWithRetry(msg) {
+  try {
+    return await sync(msg);
+  } catch (e) {
+    if (e.status !== 409) throw e;
+    return sync(msg);
+  }
+}
+
 chrome.runtime.onMessage.addListener((msg) => {
   console.log('[lc-sync] received', msg.slug, msg.lang);
-  sync(msg)
+  queue = queue.catch(() => {}).then(() => syncWithRetry(msg));
+  queue
     .then((r) => badge('OK', '#2da44e', `${msg.slug}: ${r}`))
     .catch((e) => {
       console.error('[lc-sync]', e);
