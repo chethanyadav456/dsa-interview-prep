@@ -8,8 +8,8 @@ Source: [Behavioral Interview Preparation](https://jugaldb.substack.com/p/behavi
 |------|---------|
 | [star-framework.md](star-framework.md) | STAR method, answer rules, pitfalls |
 | [story-bank.md](story-bank.md) | My 6-7 reusable stories (fill in) |
-| [amazon.md](amazon.md) | Leadership Principles question themes |
-| [google.md](google.md) | Googliness question themes |
+| [amazon.md](amazon.md) | Leadership Principles 15 questions with sample outlines |
+| [google.md](google.md) | Googliness 15 questions with sample outlines |
 | [meta.md](meta.md) | Execution and leadership themes |
 | [apple.md](apple.md) | Collaboration and innovation themes |
 | [practice-plan.md](practice-plan.md) | 6-day prep schedule |
