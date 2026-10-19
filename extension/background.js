@@ -1,7 +1,7 @@
-import { buildSolution, insertLogRow, bumpProgress, toB64, fromB64 } from './lib.js';
+import { buildSolution, insertLogRow, bumpProgress, isUnchanged, toB64, fromB64 } from './lib.js';
 
 const QUERY = `query q($slug: String!) { question(titleSlug: $slug) {
-  questionFrontendId title titleSlug difficulty topicTags { slug } } }`;
+  questionFrontendId title titleSlug difficulty topicTags { name slug } } }`;
 
 async function fetchMeta(slug) {
   const res = await fetch('https://leetcode.com/graphql', {
@@ -49,8 +49,8 @@ async function sync({ slug, lang, code }) {
   const api = gh(cfg);
 
   const existing = await api.get(sol.path);
-  if (existing && existing.text === code) return 'unchanged';
-  await api.put(sol.path, code, existing ? sol.message.replace('Add', 'Update') : sol.message, existing && existing.sha);
+  if (existing && isUnchanged(existing.text, code)) return 'unchanged';
+  await api.put(sol.path, sol.content, existing ? sol.message.replace('Add', 'Update') : sol.message, existing && existing.sha);
   if (existing) return 'updated';
 
   const readme = await api.get('README.md');

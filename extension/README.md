@@ -27,3 +27,7 @@ The token lives in `chrome.storage.local` on your machine only. Never commit it.
 ```bash
 cd extension && node --test
 ```
+
+## Credits
+
+Toolbar icon: `git-commit-horizontal` from [Lucide](https://lucide.dev), ISC license.

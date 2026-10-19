@@ -27,6 +27,28 @@ const EXT = {
 
 export const extFor = (lang) => EXT[lang] || 'txt';
 
+const HASH = new Set(['python', 'python3', 'ruby', 'bash']);
+const DASH = new Set(['mysql', 'mssql', 'oraclesql']);
+const commentFor = (lang) => (HASH.has(lang) ? '#' : DASH.has(lang) ? '--' : '//');
+
+export function buildHeader({ meta, lang, topicLabel, date }) {
+  const c = commentFor(lang);
+  const topics = meta.topicTags.map((t) => t.name).join(', ') || topicLabel || 'Misc';
+  return [
+    `${meta.questionFrontendId}. ${meta.title}`,
+    `https://leetcode.com/problems/${meta.titleSlug}/`,
+    '',
+    `Difficulty: ${meta.difficulty}`,
+    `Topics: ${topics}`,
+    `Language: ${lang}`,
+    `Solved: ${date}`,
+  ].map((line) => (line ? `${c} ${line}` : c)).join('\n') + '\n\n';
+}
+
+// Saved files are header + code, so an identical resubmit must not create a commit.
+// A file that equals the bare code predates headers and still needs one.
+export const isUnchanged = (existingText, code) => existingText !== code && existingText.endsWith(code);
+
 export function topicFor(tagSlugs) {
   const tags = new Set(tagSlugs);
   return TOPICS.find((t) => t.tags.some((s) => tags.has(s))) || MISC;
@@ -39,7 +61,8 @@ export function buildSolution({ meta, lang, code, now = new Date() }) {
   const date = now.toISOString().slice(0, 10);
   const url = `https://leetcode.com/problems/${meta.titleSlug}/`;
   const row = `| ${date} | [${meta.questionFrontendId}. ${meta.title}](${url}) | ${topic.label || 'Misc'} | ${meta.difficulty} | ${lang} |`;
-  return { path, topic, row, message: `Add ${meta.questionFrontendId}. ${meta.title} (${lang})` };
+  const content = buildHeader({ meta, lang, topicLabel: topic.label, date }) + code;
+  return { path, topic, row, content, message: `Add ${meta.questionFrontendId}. ${meta.title} (${lang})` };
 }
 
 // Appends a row to the end of the table under the "## Log" heading.
