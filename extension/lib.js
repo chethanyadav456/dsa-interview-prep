@@ -31,6 +31,8 @@ const HASH = new Set(['python', 'python3', 'ruby', 'bash']);
 const DASH = new Set(['mysql', 'mssql', 'oraclesql']);
 const commentFor = (lang) => (HASH.has(lang) ? '#' : DASH.has(lang) ? '--' : '//');
 
+const AUTHOR = 'chethanyadav456 (Chethan Yadav)';
+
 export function buildHeader({ meta, lang, topicLabel, date }) {
   const c = commentFor(lang);
   const topics = meta.topicTags.map((t) => t.name).join(', ') || topicLabel || 'Misc';
@@ -41,6 +43,7 @@ export function buildHeader({ meta, lang, topicLabel, date }) {
     `Difficulty: ${meta.difficulty}`,
     `Topics: ${topics}`,
     `Language: ${lang}`,
+    `Author: ${AUTHOR}`,
     `Solved: ${date}`,
   ].map((line) => (line ? `${c} ${line}` : c)).join('\n') + '\n\n';
 }
