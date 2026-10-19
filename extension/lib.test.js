@@ -35,7 +35,7 @@ test('base64 round trips UTF-8', () => {
 test('header is prefixed with the right comment style', () => {
   const now = new Date('2026-10-18T10:00:00Z');
   const j = buildSolution({ meta, lang: 'java', code: 'class A {}', now }).content;
-  assert.equal(j, '// 1. Two Sum\n// https://leetcode.com/problems/two-sum/\n//\n// Difficulty: Easy\n// Topics: Array, Hash Table\n// Language: java\n// Solved: 2026-10-18\n\nclass A {}');
+  assert.equal(j, '// 1. Two Sum\n// https://leetcode.com/problems/two-sum/\n//\n// Difficulty: Easy\n// Topics: Array, Hash Table\n// Language: java\n// Author: chethanyadav456 (Chethan Yadav)\n// Solved: 2026-10-18\n\nclass A {}');
   assert.ok(buildSolution({ meta, lang: 'python3', code: 'x', now }).content.startsWith('# 1. Two Sum\n'));
   assert.ok(buildSolution({ meta, lang: 'mysql', code: 'x', now }).content.startsWith('-- 1. Two Sum\n'));
 });
