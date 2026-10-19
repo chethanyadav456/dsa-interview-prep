@@ -14,6 +14,9 @@ async function fetchMeta(slug) {
   return data.question;
 }
 
+// GitHub explains 403/404 in the response body, e.g. "Resource not accessible by personal access token".
+const reason = (res) => res.json().then((j) => j.message || '', () => '');
+
 function gh(cfg) {
   const base = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/`;
   const headers = { Authorization: `Bearer ${cfg.token}`, Accept: 'application/vnd.github+json' };
@@ -22,7 +25,7 @@ function gh(cfg) {
     async get(path) {
       const res = await fetch(`${url(path)}?ref=${encodeURIComponent(cfg.branch)}`, { headers });
       if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`GitHub GET ${path}: ${res.status}`);
+      if (!res.ok) throw new Error(`GitHub GET ${path}: ${res.status} ${await reason(res)}`);
       const j = await res.json();
       return { sha: j.sha, text: fromB64(j.content) };
     },
@@ -32,7 +35,7 @@ function gh(cfg) {
         headers,
         body: JSON.stringify({ message, content: toB64(text), branch: cfg.branch, sha }),
       });
-      if (!res.ok) throw new Error(`GitHub PUT ${path}: ${res.status}`);
+      if (!res.ok) throw new Error(`GitHub PUT ${path}: ${res.status} ${await reason(res)}`);
     },
   };
 }

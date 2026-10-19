@@ -11,5 +11,6 @@
     { "matches": ["https://leetcode.com/*"], "js": ["inject.js"], "run_at": "document_start", "world": "MAIN" },
     { "matches": ["https://leetcode.com/*"], "js": ["content.js"], "run_at": "document_start" }
   ],
+  "action": { "default_title": "LeetCode GitHub Sync" },
   "options_page": "options.html"
 }
