@@ -1,3 +1,11 @@
+// 9. Palindrome Number
+// https://leetcode.com/problems/palindrome-number/
+//
+// Difficulty: Easy
+// Topics: Math
+// Language: java
+// Solved: 2026-10-19
+
 class Solution {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
