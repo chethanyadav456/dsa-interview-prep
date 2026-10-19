@@ -60,6 +60,15 @@
     return res;
   };
 
+  // responseText throws unless responseType is '' or 'text', so read by type.
+  async function xhrJson(xhr) {
+    const t = xhr.responseType;
+    if (t === 'json') return xhr.response;
+    if (t === 'blob') return JSON.parse(await xhr.response.text());
+    if (t === 'arraybuffer') return JSON.parse(new TextDecoder().decode(xhr.response));
+    return JSON.parse(xhr.responseText);
+  }
+
   const open = XMLHttpRequest.prototype.open;
   const send = XMLHttpRequest.prototype.send;
   XMLHttpRequest.prototype.open = function (method, url) {
@@ -68,8 +77,8 @@
   };
   XMLHttpRequest.prototype.send = function (body) {
     if (relevant(this._lcUrl || '', body)) {
-      this.addEventListener('load', () => {
-        try { handle(this._lcUrl, body, JSON.parse(this.responseText)); } catch (e) { log('xhr parse error', e.message); }
+      this.addEventListener('load', async () => {
+        try { handle(this._lcUrl, body, await xhrJson(this)); } catch (e) { log('xhr parse error', e.message); }
       });
     } else if (/submi|check/.test(this._lcUrl || '')) {
       log('unhandled request', this._lcUrl);
