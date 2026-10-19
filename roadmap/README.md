@@ -58,7 +58,7 @@ Doing both is fine: the 10-week plan is a first pass over the basics, the 60-day
 | 21. Greedy | `dsa/greedy/` |
 | 22. Design Data Structure | `dsa/design/` |
 
-The only pattern from the 14-pattern guide with no counterpart above is Trie, which uses `dsa/trie/`.
+The only pattern from the 15-pattern guide with no counterpart above is Trie, which uses `dsa/trie/`.
 
 Totals: 222 unique problems across both articles (182 + 40 new), 8 companies.
 
