@@ -7,7 +7,7 @@ Pattern-based, company-wise DSA roadmap built from two articles: [Company-wise D
 | | 60-day plan | 10-week plan |
 |---|-------------|--------------|
 | Pace | 60-90 min a day, 2-4 problems | about 5-6 problems a week |
-| Style | Deep: 22 patterns, company days, review days, mock interviews | Breadth: 14 patterns, one or two per week |
+| Style | Deep: 22 patterns, company days, review days, mock interviews | Breadth: 15 patterns, one or two per week |
 | Problems | 141 slots | 54 |
 | Start here | [60-day-plan.md](60-day-plan.md) | [10-week-plan.md](10-week-plan.md) |
 

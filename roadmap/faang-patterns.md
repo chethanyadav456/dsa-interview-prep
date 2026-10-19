@@ -1,6 +1,6 @@
-# FAANG DSA Patterns (14 patterns)
+# FAANG DSA Patterns (15 patterns)
 
-Pattern guide from [Michael's Guide to FAANG DSA](https://jugaldb.substack.com/p/michaels-guide-to-faang-dsa): 14 patterns, 5 sample problems each. It complements the 22-pattern tracker in [patterns.md](patterns.md); the last column of the index shows where each pattern overlaps. The weekly schedule is in [10-week-plan.md](10-week-plan.md).
+Pattern guide from [Michael's Guide to FAANG DSA](https://jugaldb.substack.com/p/michaels-guide-to-faang-dsa): 15 patterns, 5 sample problems each. It complements the 22-pattern tracker in [patterns.md](patterns.md); the last column of the index shows where each pattern overlaps. The weekly schedule is in [10-week-plan.md](10-week-plan.md).
 
 Premium problems need LeetCode Premium. Tags after each problem show company lists and 60-day plan days where the same problem already appears.
 
