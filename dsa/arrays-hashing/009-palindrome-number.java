@@ -4,6 +4,7 @@
 // Difficulty: Easy
 // Topics: Math
 // Language: java
+// Author: chethanyadav456 (Chethan Yadav)
 // Solved: 2026-10-19
 
 class Solution {
@@ -18,7 +19,7 @@ class Solution {
             reversed = reversed * 10 + digit;
             x /= 10;
         }
-        
+        // test
         return original == reversed;
     }
 }
