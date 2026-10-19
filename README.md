@@ -65,7 +65,7 @@ Solution files are named `NNN-problem-name.<ext>`, where `NNN` is the problem nu
 
 | Topic | Solved |
 |-------|--------|
-| Arrays & Hashing | 0 |
+| Arrays & Hashing | 1 |
 | Two Pointers | 0 |
 | Sliding Window | 0 |
 | Stack | 0 |
@@ -84,6 +84,7 @@ Solution files are named `NNN-problem-name.<ext>`, where `NNN` is the problem nu
 
 | Date | Problem | Topic | Difficulty | Notes |
 |------|---------|-------|------------|-------|
+| 2026-10-19 | [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Arrays & Hashing | Easy | java |
 
 ## Running the Java code
 
