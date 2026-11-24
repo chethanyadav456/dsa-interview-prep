@@ -4,6 +4,18 @@ A public log of my data structures and algorithms practice, Java learning, and i
 
 Practice platform: [learn.chethan.xyz](https://learn.chethan.xyz)
 
+## Contents
+
+- [Goals](#goals)
+- [Repository layout](#repository-layout)
+- [Java course](#java-course)
+- [DSA roadmap](#dsa-roadmap)
+- [DSA topics](#dsa-topics)
+- [Workflow](#workflow)
+- [Progress](#progress)
+- [Log](#log)
+- [Running the Java code](#running-the-java-code)
+
 ## Goals
 
 - Build a solid foundation in Java, then move into data structures and algorithms.
